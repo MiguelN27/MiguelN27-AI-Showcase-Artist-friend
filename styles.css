@@ -1,0 +1,607 @@
+/*
+====================================
+  Music Card Style
+====================================
+*/
+.music-card {
+    position: relative;
+    width: 172.5px;
+    height: 212.75px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5em;
+    background: none;
+}
+.music-album-img {
+    width: 100%;
+    height: 172.5px;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: block;
+}
+.music-footer {
+    width: 100%;
+    padding: 1em 1em 1.2em 1em;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 80%, rgba(0,0,0,0.0) 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.music-footer h3 {
+    margin: 0 0 0.4em 0;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.music-footer audio {
+    width: 100%;
+    margin-top: 0.3em;
+}
+/*
+====================================
+  About & Music Side-by-Side
+====================================
+*/
+.about-music-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3em;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.about-side {
+    flex: 1 1 0;
+    max-width: 45%;
+}
+.music-side {
+    flex: 1 1 0;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+@media (max-width: 900px) {
+    .about-music-flex {
+        flex-direction: column;
+        gap: 2em;
+    }
+    .about-side, .music-side {
+        max-width: 100%;
+    }
+}
+/*
+====================================
+  Event Card Section
+====================================
+*/
+.event-card {
+    width: 80%;
+    height: 40vh;
+    margin: 40px auto 0 auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+.event-footer {
+    width: 100%;
+    padding: 2em 1.5em 1.5em 1.5em;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 80%, rgba(0,0,0,0.0) 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.event-footer h3 {
+    margin: 0 0 0.4em 0;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.event-footer p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+/*
+====================================
+  Releases Card Group
+====================================
+*/
+.releases-section {
+    background: var(--bg);
+    padding: 2.5em 0 2em 0;
+}
+.releases-section h2 {
+    margin-bottom: 1.2em;
+    color: var(--primary);
+    font-size: 2rem;
+}
+.card-group {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 1em;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg);
+    width: 80%;
+    margin: 0 auto;
+}
+.card-group::-webkit-scrollbar {
+    height: 8px;
+}
+.card-group::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+.release-card {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 500px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: box-shadow var(--transition), transform var(--transition);
+    position: relative;
+}
+.release-card:hover {
+    box-shadow: 0 8px 32px rgba(30,30,47,0.15);
+    transform: translateY(-4px) scale(1.03);
+}
+.release-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+.card-footer {
+    padding: 1em;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 80%, rgba(0,0,0,0.0) 100%);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.card-footer h3 {
+    margin: 0 0 0.2em 0;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.card-footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+@media (max-width: 600px) {
+    .release-card {
+        width: 160px;
+        height: 240px;
+    }
+    .release-card img {
+        height: 140px;
+    }
+}
+/*
+====================================
+  General Styles & Variables
+====================================
+*/
+:root {
+    --primary: #1e1e2f;
+    --accent: #ff4c60;
+    --bg: #f7f7fa;
+    --text: #22223b;
+    --white: #fff;
+    --shadow: 0 4px 24px rgba(30,30,47,0.08);
+    --radius: 1.2rem;
+    --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    --font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.75em 2em;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+}
+.btn:hover {
+    background: #ff6a80;
+    transform: translateY(-2px) scale(1.03);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    margin-top: 0;
+    color: var(--primary);
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; margin-bottom: 0.5em; }
+h3 { font-size: 1.2rem; }
+
+p, a, li, label, input, textarea, button {
+    font-size: 1rem;
+}
+
+/*
+====================================
+  Header & Navigation
+====================================
+*/
+.header {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2em 0;
+}
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    margin-left: 20px;
+    height: 40px;
+}
+.nav-links {
+    /* ...existing styles... */
+    margin-right: 20px;
+    padding-right: 20px;
+}
+}
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+.artist-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(30,30,47,0.10);
+    display: block;
+}
+.logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color var(--transition);
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+}
+.logo-link:hover {
+    color: var(--accent);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/*
+====================================
+  Hero Section
+====================================
+*/
+.hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 42vh;
+    background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 0;
+    position: relative;
+    box-shadow: var(--shadow);
+    /* No sticky or fixed positioning, scrolls with page */
+}
+}
+.hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 100%;
+}
+.hero-text-fade {
+    width: 100%;
+    padding: 2.5em 0 2em 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.0) 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+.hero-text-fade h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3em;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-align: left;
+}
+}
+.hero-text-fade p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/*
+====================================
+  Section Styles
+====================================
+*/
+.section {
+    padding: 3em 0 2em 0;
+    background: var(--bg);
+    animation: fadeInUp 1s ease;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/*
+====================================
+  About Section
+====================================
+*/
+.about p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #444;
+}
+
+/*
+====================================
+  Music Section
+====================================
+*/
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: flex-end;
+}
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    background: none;
+    border-radius: var(--radius);
+    box-shadow: none;
+    padding: 1em 0;
+    transition: box-shadow var(--transition);
+}
+.music-item:hover {
+    box-shadow: 0 8px 32px rgba(30,30,47,0.15);
+}
+.music-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 0.7em;
+    object-fit: cover;
+}
+.music-item h3 {
+    margin: 0 0 0.5em 0;
+}
+.music-item audio {
+    width: 200px;
+    outline: none;
+}
+
+/*
+====================================
+  Career Section (was Gallery)
+====================================
+*/
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5em;
+    margin-top: 1.5em;
+}
+.career-card {
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.career-card img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.career-card:hover img {
+    transform: scale(1.04);
+    box-shadow: 0 8px 32px rgba(30,30,47,0.15);
+}
+.career-footer {
+    width: 100%;
+    padding: 1.2em 1em 1em 1em;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 80%, rgba(0,0,0,0.0) 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.career-footer h3 {
+    margin: 0 0 0.3em 0;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.career-footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/*
+====================================
+  Contact Section
+====================================
+*/
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: var(--font-main);
+    resize: none;
+    transition: border var(--transition);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid var(--accent);
+    outline: none;
+}
+.contact-form button {
+    align-self: flex-end;
+}
+
+/*
+====================================
+  Footer
+====================================
+*/
+.footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5em 0;
+    font-size: 1rem;
+    margin-top: 2em;
+}
+
+/*
+====================================
+  Responsive Design
+====================================
+*/
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .music-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 600px) {
+    html { font-size: 15px; }
+    .container { width: 98%; }
+    .hero-content h1 { font-size: 2.1rem; }
+    .hero-content p { font-size: 1.1rem; }
+    .music-item audio { width: 100%; }
+}
