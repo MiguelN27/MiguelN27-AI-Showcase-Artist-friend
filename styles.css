@@ -1,3 +1,20 @@
+.career.section,
+.releases-section,
+.contact.section,
+.about.section {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.releases-section {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+main > *:not(.hero):not(.career) {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 /*
 ====================================
   Music Card Style
@@ -57,7 +74,8 @@
     align-items: flex-start;
     gap: 3em;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 .about-side {
@@ -132,13 +150,17 @@
     padding: 2.5em 0 2em 0;
 }
 .releases-section h2 {
-    margin-bottom: 1.2em;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10px;
+        margin-bottom: 1.2em;
     color: var(--primary);
     font-size: 2rem;
 }
 .card-group {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 30px;
     overflow-x: auto;
     padding-bottom: 1em;
@@ -156,8 +178,8 @@
 }
 .release-card {
     flex: 0 0 auto;
-    width: 400px;
-    height: 500px;
+    width: 480px;
+    height: 600px;
     background: var(--white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -174,7 +196,7 @@
 }
 .release-card img {
     width: 100%;
-    height: 350px;
+    height: 420px;
     object-fit: cover;
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
