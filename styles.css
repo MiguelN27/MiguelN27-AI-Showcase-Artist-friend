@@ -1,3 +1,27 @@
+.about.section {
+    margin: 40px auto 0 auto;
+    padding: 0;
+    width: 80%;
+}
+.contact-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact-flex h2 {
+    flex: 1;
+    text-align: left;
+    margin-right: 2em;
+    font-size: 2.8rem;
+    line-height: 1.1;
+}
+.contact-flex .contact-form {
+    flex: 1;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: 0;
+}
 .career.section,
 .releases-section,
 .contact.section,
@@ -14,6 +38,8 @@ main > *:not(.hero):not(.career) {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    background: #000;
+    color: #fff;
 }
 /*
 ====================================
@@ -22,8 +48,9 @@ main > *:not(.hero):not(.career) {
 */
 .music-card {
     position: relative;
-    width: 172.5px;
-    height: 212.75px;
+    width: 350px;
+    margin-right: 25px;
+    height: 300px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -35,7 +62,7 @@ main > *:not(.hero):not(.career) {
 }
 .music-album-img {
     width: 100%;
-    height: 172.5px;
+    height: 100%;
     object-fit: cover;
     border-radius: var(--radius) var(--radius) 0 0;
     display: block;
@@ -61,6 +88,13 @@ main > *:not(.hero):not(.career) {
 .music-footer audio {
     width: 100%;
     margin-top: 0.3em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+.music-card:hover .music-footer audio {
+    opacity: 1;
+    pointer-events: auto;
 }
 /*
 ====================================
@@ -110,7 +144,7 @@ main > *:not(.hero):not(.career) {
     margin: 40px auto 0 auto;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    background: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+    background: url('./Career-image-2.jpg') center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -154,7 +188,7 @@ main > *:not(.hero):not(.career) {
         margin-right: 10%;
         margin-top: 10px;
         margin-bottom: 1.2em;
-    color: var(--primary);
+    color: #fff;
     font-size: 2rem;
 }
 .card-group {
@@ -179,13 +213,13 @@ main > *:not(.hero):not(.career) {
 .release-card {
     flex: 0 0 auto;
     width: 480px;
-    height: 600px;
-    background: var(--white);
-    border-radius: var(--radius);
+    height: 420px;
+    background: #181818;
+    background: url('./Career-image-2.jpg') center/cover no-repeat;
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     overflow: hidden;
     transition: box-shadow var(--transition), transform var(--transition);
     position: relative;
@@ -195,11 +229,19 @@ main > *:not(.hero):not(.career) {
     transform: translateY(-4px) scale(1.03);
 }
 .release-card img {
+        display: block;
+        margin-top: 0;
+        padding-top: 0;
     width: 100%;
-    height: 420px;
+    height: 100%;
     object-fit: cover;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
+    border-radius: var(--radius);
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .card-footer {
     padding: 1em;
@@ -215,6 +257,7 @@ main > *:not(.hero):not(.career) {
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
+        z-index: 2;
 }
 .card-footer h3 {
     margin: 0 0 0.2em 0;
@@ -225,7 +268,7 @@ main > *:not(.hero):not(.career) {
 .card-footer p {
     margin: 0;
     font-size: 0.95rem;
-    color: #e0e0e0;
+    color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 @media (max-width: 600px) {
@@ -243,10 +286,10 @@ main > *:not(.hero):not(.career) {
 ====================================
 */
 :root {
-    --primary: #1e1e2f;
+    --primary: #000;
     --accent: #ff4c60;
-    --bg: #f7f7fa;
-    --text: #22223b;
+    --bg: #000;
+    --text: #fff;
     --white: #fff;
     --shadow: 0 4px 24px rgba(30,30,47,0.08);
     --radius: 1.2rem;
@@ -300,7 +343,7 @@ h1, h2, h3 {
     font-family: var(--font-main);
     font-weight: 700;
     margin-top: 0;
-    color: var(--primary);
+    color: #fff;
 }
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; margin-bottom: 0.5em; }
@@ -316,8 +359,8 @@ p, a, li, label, input, textarea, button {
 ====================================
 */
 .header {
-    background: var(--primary);
-    color: var(--white);
+    background: #000;
+    color: #fff;
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
@@ -395,8 +438,8 @@ p, a, li, label, input, textarea, button {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    min-height: 42vh;
-    background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    min-height: 52.5vh;
+    background: url(./Heroe-option-1.jpeg.webp) center/contain no-repeat, url(./Heroe-option-1.jpeg.webp) center/cover no-repeat;
     color: var(--white);
     text-align: center;
     padding: 0;
@@ -437,7 +480,7 @@ p, a, li, label, input, textarea, button {
 }
 .hero-text-fade p {
     font-size: 1.2rem;
-    color: #e0e0e0;
+    color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.4);
     margin-bottom: 0;
     text-align: left;
@@ -450,7 +493,7 @@ p, a, li, label, input, textarea, button {
 */
 .section {
     padding: 3em 0 2em 0;
-    background: var(--bg);
+    background: #000;
     animation: fadeInUp 1s ease;
 }
 @keyframes fadeInUp {
@@ -466,7 +509,7 @@ p, a, li, label, input, textarea, button {
 .about p {
     max-width: 600px;
     margin: 0 auto;
-    color: #444;
+    color: #fff;
 }
 
 /*
@@ -479,6 +522,7 @@ p, a, li, label, input, textarea, button {
     flex-direction: column;
     gap: 2em;
     align-items: flex-end;
+    margin-left: auto;
 }
 .music-item {
     display: flex;
@@ -556,7 +600,7 @@ p, a, li, label, input, textarea, button {
 .career-footer p {
     margin: 0;
     font-size: 1rem;
-    color: #e0e0e0;
+    color: #fff;
     text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
@@ -597,8 +641,8 @@ p, a, li, label, input, textarea, button {
 ====================================
 */
 .footer {
-    background: var(--primary);
-    color: var(--white);
+    background: #000;
+    color: #fff;
     text-align: center;
     padding: 1.5em 0;
     font-size: 1rem;
