@@ -22,17 +22,14 @@
     margin-left: auto;
     margin-right: 0;
 }
-.career.section,
+.about.section,
 .releases-section,
-.contact.section,
-.about.section {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.releases-section {
-    padding-left: 200px;
-    padding-right: 200px;
+.upcoming-show-section,
+.career.section,
+.contact.section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 main > *:not(.hero):not(.career) {
     margin-left: auto;
@@ -184,10 +181,8 @@ main > *:not(.hero):not(.career) {
     padding: 2.5em 0 2em 0;
 }
 .releases-section h2 {
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 10px;
-        margin-bottom: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 1.2em;
     color: #fff;
     font-size: 2rem;
 }
@@ -300,6 +295,10 @@ main > *:not(.hero):not(.career) {
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
 }
 
 body {
